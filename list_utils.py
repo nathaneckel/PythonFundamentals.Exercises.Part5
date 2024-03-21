@@ -33,8 +33,8 @@ def print_list_items(list_in: List) -> None:
 
 
 def sort_by_commit_count(list_in: List) -> List:
-    list_in.sort(key=lambda x: x[1])
-    return list_in
+    #list_in.sort(key=lambda x: x[1])
+    return sorted(list_in, key=lambda entry: entry[1])
     """
     Given a list of entries, return a new list sorted based on the commit count.
 
@@ -49,14 +49,16 @@ def sort_by_commit_count(list_in: List) -> List:
 
 
 def gen_list_of_nums(n: int) -> List[int]:
-    return list(range (n))
+    result = []
+    for i in range(n):
+        result.append(i)
+    return result
     """
     Given a number (N), this function returns a list of integers from 0 to N (exclusive).
 Return a list of integers from 0 to n (# of items in the list)
     :param n: The number of items the result should contain
     :return: A list of integers
     """
-    #pass  # remove pass statement and implement me
 
 
 def half_list(list_in: List, half: int) -> List:
